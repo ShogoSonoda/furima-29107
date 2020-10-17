@@ -76,7 +76,7 @@ Things you may want to cover:
 
 | Column       | Type       | Option                        |
 | ------------ | ---------- | ----------------------------- |
-| user         | references | null: false, foreign: true    |
+| purchase     | references | null: false, foreign: true    |
 | postal_code  | string     | null: false                   |
 | prefecture   | integer    | null: false                   |
 | city         | string     | null: false                   |
