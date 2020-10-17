@@ -82,7 +82,7 @@ Things you may want to cover:
 | city         | string  | null:false |
 | house_number | string  | null:false |
 | building     | string  | null:true  |
-| tel_number   | integer | null:false |
+| tel_number   | string  | null:false |
 
 ### Association
 
