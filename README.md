@@ -34,7 +34,7 @@ Things you may want to cover:
 | first_name       | string | null: false |
 | last_name(kana)  | string | null: false |
 | first_name(kana) | string | null: false |
-| birth_data       | data   | null: false |
+| birth_date       | date   | null: false |
 
 ### Association
 
