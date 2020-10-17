@@ -43,17 +43,17 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column             | Type    | Option     |
-| ------------------ | ------- | ---------- |
-| image              | string  | null:false |
-| name               | string  | null:false |
-| text               | text    | null:false |
-| category_id        | integer | null:false |
-| status_id          | integer | null:false |
-| shipping_id        | integer | null:false |
-| shipment_source_id | integer | null:false |
-| days_id            | integer | null:false |
-| price              | string  | null:false |
+| Column             | Type    | Option      |
+| ------------------ | ------- | ----------- |
+| image              | string  | null: false |
+| name               | string  | null: false |
+| text               | text    | null: false |
+| category_id        | integer | null: false |
+| status_id          | integer | null: false |
+| shipping_id        | integer | null: false |
+| shipment_source_id | integer | null: false |
+| days_id            | integer | null: false |
+| price              | string  | null: false |
 
 ### Association
 
@@ -62,10 +62,10 @@ Things you may want to cover:
 
 ## purchases テーブル
 
-| Column  | Type       | Option                        |
-| ------- | ---------- | ----------------------------- |
-| user    | references | null:false, foreign_key: true |
-| item    | references | null:false, foreign_key: true |
+| Column  | Type       | Option                         |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -75,14 +75,15 @@ Things you may want to cover:
 
 ## addresses テーブル
 
-| Column       | Type    | Option     |
-| ------------ | ------- | ---------- |
-| postal_code  | string  | null:false |
-| prefecture   | integer | null:false |
-| city         | string  | null:false |
-| house_number | string  | null:false |
-| building     | string  | null:true  |
-| tel_number   | string  | null:false |
+| Column       | Type       | Option                        |
+| ------------ | ---------- | ----------------------------- |
+| user         | references | null: false, foreign: true    |
+| postal_code  | string     | null: false                   |
+| prefecture   | integer    | null: false                   |
+| city         | string     | null: false                   |
+| house_number | string     | null: false                   |
+| building     | string     | null: true                    |
+| tel_number   | string     | null: false                   |
 
 ### Association
 
