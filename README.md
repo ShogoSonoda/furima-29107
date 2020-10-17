@@ -25,14 +25,16 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column     | Type   | Options     |
-| ---------- | ------ | ----------- |
-| nickname   | string | null: false |
-| email      | string | null: false |
-| password   | string | null: false |
-| name       | string | null: false |
-| name(kana) | string | null: false |
-| birth-data | data   | null: false |
+| Column           | Type   | Options     |
+| ---------------- | ------ | ----------- |
+| nickname         | string | null: false |
+| email            | string | null: false |
+| password         | string | null: false |
+| last_name        | string | null: false |
+| first_name       | string | null: false |
+| last_name(kana)  | string | null: false |
+| first_name(kana) | string | null: false |
+| birth_data       | data   | null: false |
 
 ### Association
 
