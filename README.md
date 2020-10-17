@@ -80,7 +80,7 @@ Things you may want to cover:
 | postal_code  | string  | null:false |
 | prefecture   | integer | null:false |
 | city         | string  | null:false |
-| house_number | integer | null:false |
+| house_number | string  | null:false |
 | building     | string  | null:true  |
 | tel_number   | integer | null:false |
 
