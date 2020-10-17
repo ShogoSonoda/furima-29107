@@ -45,7 +45,6 @@ Things you may want to cover:
 
 | Column             | Type    | Option      |
 | ------------------ | ------- | ----------- |
-| image              | string  | null: false |
 | name               | string  | null: false |
 | text               | text    | null: false |
 | category_id        | integer | null: false |
