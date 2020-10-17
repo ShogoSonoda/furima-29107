@@ -43,17 +43,17 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column          | Type    | Option     |
-| --------------- | ------- | ---------- |
-| image           | string  | null:false |
-| name            | string  | null:false |
-| text            | text    | null:false |
-| category        | integer | null:false |
-| status          | integer | null:false |
-| shipping        | integer | null:false |
-| shipment_source | integer | null:false |
-| days            | integer | null:false |
-| price           | string  | null:false |
+| Column             | Type    | Option     |
+| ------------------ | ------- | ---------- |
+| image              | string  | null:false |
+| name               | string  | null:false |
+| text               | text    | null:false |
+| category_id        | integer | null:false |
+| status_id          | integer | null:false |
+| shipping_id        | integer | null:false |
+| shipment_source_id | integer | null:false |
+| days_id            | integer | null:false |
+| price              | string  | null:false |
 
 ### Association
 
