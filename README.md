@@ -25,15 +25,19 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column    | Type   | Options     |
-| --------- | ------ | ----------- |
-| name      | string | null: false |
-| email     | string | null: false |
-| password  | string | null: false |
+| Column     | Type   | Options     |
+| ---------- | ------ | ----------- |
+| nickname   | string | null: false |
+| email      | string | null: false |
+| password   | string | null: false |
+| name       | string | null: false |
+| name(kana) | string | null: false |
+| birth-data | data   | null: false |
 
 ### Association
 
 - has_many :items
+- has_many :purchases
 
 ## items テーブル
 
@@ -42,25 +46,42 @@ Things you may want to cover:
 | image           | string  | null:false |
 | name            | string  | null:false |
 | text            | text    | null:false |
-| category        | string  | null:false |
-| status          | string  | null:false |
-| shipping        | string  | null:false |
-| shipment-source | string  | null:false |
-| days            | string  | null:false |
+| category        | integer | null:false |
+| status          | integer | null:false |
+| shipping        | integer | null:false |
+| shipment_source | integer | null:false |
+| days            | integer | null:false |
 | price           | string  | null:false |
 
 ### Association
 
-- has_one :users
-- has_one :purchase
+- belongs_to :users
+- has_one :purchases
 
-## purchase テーブル
+## purchases テーブル
 
-| Column  | Type   | Option     |
-| ------- | ------ | ---------- |
-| address | string | null:false |
-| card    | string | null:false |
+| Column  | Type       | Option                        |
+| ------- | ---------- | ----------------------------- |
+| user    | references | null:false, foreign_key: true |
+| item    | references | null:false, foreign_key: true |
 
 ### Association
 
+- belongs_to :users
 - belongs_to :items
+- has_one :addresses
+
+## addresses テーブル
+
+| Column       | Type    | Option     |
+| ------------ | ------- | ---------- |
+| postal_code  | integer | null:false |
+| prefecture   | integer | null:false |
+| city         | string  | null:false |
+| house_number | integer | null:false |
+| building     | string  | null:true  |
+| tel_number   | integer | null:false |
+
+### Association
+
+- belongs_to :purchases
