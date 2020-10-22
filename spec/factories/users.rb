@@ -4,7 +4,7 @@ FactoryBot.define do
     email                  {Faker::Internet.free_email}
     password = Faker::Internet.password(min_length: 6)
     password               {password}
-    # password_confirmation  {password}
+    encrypted_password     {password}
     first_name             {"園田"}
     last_name              {"将吾"}
     first_name_kana        {"ソノダ"}
