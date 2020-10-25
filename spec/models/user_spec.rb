@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規登録' do
     context '新規登録できる場合' do
-      it 'nickname,email,password,encrypted_password,first_name,last_nama,first_name_kana,last_name_kana,birth_dateが存在すれば登録できる' do
+      it 'nickname,email,password,password_confirmation,first_name,last_nama,first_name_kana,last_name_kana,birth_dateが存在すれば登録できる' do
         expect(@user).to be_valid
       end
 
@@ -16,17 +16,28 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
 
-      it 'passwordとencrypted_passwordが一致している' do
+      it 'passwordとpassword_cofirmationが一致している' do
         @user.password = '000aaa'
-        @user.encrypted_password = '000aaa'
+        @user.password_confirmation = '000aaa'
         expect(@user).to be_valid
       end
 
-      it 'first_name,last_name,first_name_kana,last_name_kanaは全角で入力' do
+      it 'first_nameは全角で入力' do
         @user.first_name = '東野'
+        expect(@user).to be_valid
+      end
+      
+      it 'last_nameは全角で入力' do
         @user.last_name = '圭吾'
+        expect(@user).to be_valid
+      end
+      it 'first_name_kanaは全角で入力' do
         @user.first_name_kana = 'ヒガシノ'
+        expect(@user).to be_valid
+      end
+      it 'last_name_kanaは全角で入力' do
         @user.last_name_kana = 'ケイゴ'
+        expect(@user).to be_valid
       end
     end
 
