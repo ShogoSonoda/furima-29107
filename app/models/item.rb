@@ -9,12 +9,13 @@ class Item < ApplicationRecord
   belongs_to_active_hash :day
 
   with_options presence: true do
+    validates :image
     validates :name
     validates :description
-    validates :price
+    validates :price, numericality: { only_integer: true, greater_than: 300,less_than: 9999999 }
   end
 
-  with_options numericality: { other_than: 1 }
+  with_options numericality: { other_than: 1 } do
     validates :category_id
     validates :status_id
     validates :shipping_id
@@ -22,5 +23,4 @@ class Item < ApplicationRecord
     validates :days_id
   end
 
-  validates :price, numericality: { only_integer: true, greater_than: 300,less_than: 9999999 }
 end
