@@ -12,12 +12,6 @@ RSpec.describe Item, type: :model do
         expect(@item).to be_valid
       end
 
-      it 'priceは半角数字で入力' do
-        @item.price = '1000'
-        expect(@item).to be_valid
-      end
-    end
-
     context '商品が出品できない場合' do
       it 'imageが空の時' do
         @item.image = nil
