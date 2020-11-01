@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
         @user.first_name = '東野'
         expect(@user).to be_valid
       end
-      
+
       it 'last_nameは全角で入力' do
         @user.last_name = '圭吾'
         expect(@user).to be_valid

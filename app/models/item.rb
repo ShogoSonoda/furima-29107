@@ -12,7 +12,7 @@ class Item < ApplicationRecord
     validates :image
     validates :name
     validates :description
-    validates :price, numericality: { only_integer: true, greater_than: 300,less_than: 9999999 }
+    validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9_999_999 }
   end
 
   with_options numericality: { other_than: 1 } do
@@ -22,5 +22,4 @@ class Item < ApplicationRecord
     validates :shipment_source_id
     validates :days_id
   end
-
 end
