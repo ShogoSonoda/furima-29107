@@ -20,6 +20,6 @@ class Item < ApplicationRecord
     validates :status_id
     validates :shipping_id
     validates :shipment_source_id
-    validates :days_id
+    validates :day_id
   end
 end
