@@ -51,7 +51,7 @@ Things you may want to cover:
 | status_id          | integer     | null: false                    |
 | shipping_id        | integer     | null: false                    |
 | shipment_source_id | integer     | null: false                    |
-| days_id            | integer     | null: false                    |
+| day_id             | integer     | null: false                    |
 | price              | string      | null: false                    |
 | user_id            | references  | null: false, foreign_key: true |
 
