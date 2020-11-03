@@ -5,6 +5,7 @@ class Category < ActiveHash::Base
     { id: 3, name: '本' },
     { id: 4, name: 'ゲーム' },
     { id: 5, name: '服' },
-    { id: 6, name: '家電' }
+    { id: 6, name: '家電' },
+    { id: 7, name: '食料品' }
   ]
 end
