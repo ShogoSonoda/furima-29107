@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :search_item, only: [:show, :edit, :update]
+  before_action :seller_check, only: [:edit]
 
   def index
     @items = Item.order("created_at DESC")
@@ -42,4 +43,12 @@ class ItemsController < ApplicationController
   def search_item
     @item = Item.find(params[:id])
   end
+
+  def seller_check
+    search_item
+    unless user_signed_in? && @item.user.id == current_user.id
+      render :index
+    end
+  end
+
 end
