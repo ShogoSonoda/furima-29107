@@ -1,4 +1,5 @@
 class OrderAddress
+  belongs_to :order
   include ActiveModel::Model
   attr_accessor :token, :order_id, :postal_code, :shipment_source_id, :city, :house_number, :building, :tel_number
 
@@ -23,6 +24,6 @@ class OrderAddress
 
   def save
     Order.create(user_id: item.user_id, item_id: item.id)
-    Address.create(order_id: order.id, postal_code: postal_code, shipment_source_id: shipment_source_id, city: city, house_number: house_number, building: building, tel_number: tel_number)
+    Address.create(order_id: orderid, postal_code: postal_code, shipment_source_id: shipment_source_id, city: city, house_number: house_number, building: building, tel_number: tel_number)
   end
 end
