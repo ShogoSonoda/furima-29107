@@ -4,13 +4,13 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @oder_address = OrderAddress.new
+    @order_address = OrderAddress.new
   end
 
   def create
-    @oder_address = OrderAddress.new(order_params)
-    if @oder_address.valid?
-      @oder_address.save
+    @order_address = OrderAddress.new(order_params)
+    if @order_address.valid?
+      @order_address.save
       redirect_to :index
     else
       render :new
@@ -19,6 +19,6 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:oder_address).permit(:user_id, :item_id, :order_id, :postal_code, :shipment_source_id, :city, :house_number, :building, :tel_number)
+    params.require(:order_address).permit(:user_id, :item_id, :order_id, :postal_code, :shipment_source_id, :city, :house_number, :building, :tel_number)
   end
 end
