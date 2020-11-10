@@ -75,15 +75,15 @@ Things you may want to cover:
 
 ## addresses テーブル
 
-| Column          | Type       | Option                        |
-| --------------- | ---------- | ----------------------------- |
-| order_id        | references | null: false, foreign: true    |
-| postal_code     | string     | null: false                   |
-| prefecture_id   | integer    | null: false                   |
-| city            | string     | null: false                   |
-| house_number    | string     | null: false                   |
-| building        | string     | null: true                    |
-| tel_number      | string     | null: false                   |
+| Column             | Type       | Option                        |
+| ------------------ | ---------- | ----------------------------- |
+| order_id           | references | null: false, foreign: true    |
+| postal_code        | string     | null: false                   |
+| shipment_source_id | integer    | null: false                   |
+| city               | string     | null: false                   |
+| house_number       | string     | null: false                   |
+| building           | string     | null: true                    |
+| tel_number         | string     | null: false                   |
 
 ### Association
 
