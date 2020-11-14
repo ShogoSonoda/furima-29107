@@ -81,10 +81,6 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Tel number is invalid")
       end
-
-      it '購入済みの商品を購入した時' do
-        
-      end
     end
   end
 end

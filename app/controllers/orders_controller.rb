@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :purchaser_check
+
   def index
     @item = Item.find(params[:item_id])
     @order_address = OrderAddress.new
@@ -8,6 +10,7 @@ class OrdersController < ApplicationController
     @item = Item.find(params[:item_id])
     @order_address = OrderAddress.new(order_params)
     if @order_address.valid?
+      @item.update(purchaser: current_user.id)
       pay_item
       @order_address.save
       redirect_to root_path
@@ -28,5 +31,14 @@ class OrdersController < ApplicationController
       card: order_params[:token],
       currency: 'jpy'
     )
+  end
+
+  private
+
+  def purchaser_check
+    @item = Item.find(params[:item_id])
+    if @item.purchaser.present?
+      render template: "items/show"
+    end
   end
 end
