@@ -14,7 +14,6 @@ const pay = () => {
       cvc: formData.get("order_address[cvc]"),
     };
 
-    console.log(card);
     Payjp.createToken(card, (status, response) => {
       
       if (status == 200) {

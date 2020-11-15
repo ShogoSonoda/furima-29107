@@ -1,15 +1,14 @@
 class OrdersController < ApplicationController
+  before_action :search_item, only: [:index, :create, :purchaser_check, :seller_check]
   before_action :authenticate_user!
   before_action :purchaser_check
   before_action :seller_check
 
   def index
-    @item = Item.find(params[:item_id])
     @order_address = OrderAddress.new
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @order_address = OrderAddress.new(order_params)
     if @order_address.valid?
       @item.update(purchaser: current_user.id)
@@ -42,14 +41,12 @@ class OrdersController < ApplicationController
   end
   
   def purchaser_check
-    search_item
     if @item.purchaser.present?
       render template: "items/index"
     end
   end
 
   def seller_check
-    search_item
     if user_signed_in? && @item.user.id == current_user.id
       render template: "items/index"
     end
