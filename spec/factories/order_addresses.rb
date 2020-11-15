@@ -8,7 +8,7 @@ FactoryBot.define do
     shipment_source_id {5}
     city               {"加古川市"}
     house_number       {"111-22"}
-    building           {}
+    building           {"ハイタウン"}
     tel_number         {"08012345678"}
   end
 end
