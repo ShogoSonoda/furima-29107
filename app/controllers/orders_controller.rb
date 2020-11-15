@@ -42,13 +42,13 @@ class OrdersController < ApplicationController
   
   def purchaser_check
     if @item.purchaser.present?
-      render template: "items/index"
+      redirect_to root_path
     end
   end
 
   def seller_check
     if user_signed_in? && @item.user.id == current_user.id
-      render template: "items/index"
+      redirect_to root_path
     end
   end
 end
