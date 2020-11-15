@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :seller_check, only: [:edit, :destroy]
 
   def index
-    @items = Item.order("created_at DESC")
+    @items = Item.order('created_at DESC')
   end
 
   def new
@@ -55,5 +55,4 @@ class ItemsController < ApplicationController
       render :index
     end
   end
-
 end
