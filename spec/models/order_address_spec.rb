@@ -11,21 +11,6 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address).to be_valid
       end
 
-      it 'postal_codeにはハイフンがある' do
-        @order_address.postal_code = "222-5555"
-        expect(@order_address).to be_valid
-      end
-
-      it 'tel_numberは11桁の半角数字である' do
-        @order_address.tel_number = "09044445555"
-        expect(@order_address).to be_valid
-      end
-
-      it 'tel_numberは10桁の半角数字である' do
-        @order_address.tel_number = "0903338888"
-        expect(@order_address).to be_valid
-      end
-
       it 'buildingは空でも保存できる' do
         @order_address.building = ''
         expect(@order_address).to be_valid
